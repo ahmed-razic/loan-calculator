@@ -1,13 +1,13 @@
-document.getElementById('loan-form').addEventListener('submit', function () {
+document.getElementById('loan-form').addEventListener('submit', function (e) {
   document.getElementById('results').style.display = 'none';
   document.getElementById('loading').style.display = 'block';
 
   setTimeout(calculate, 2000);
+
+  e.preventDefault();
 });
 
-function calculate(e) {
-  e.preventDefault();
-
+function calculate() {
   const amount = document.getElementById('amount');
   const interest = document.getElementById('interest');
   const years = document.getElementById('years');
